@@ -1,0 +1,16 @@
+{
+  "name": "instahyre_assignment",
+  "version": "1.0.0",
+  "description": "truecaller rip-off",
+  "main": "server.js",
+  "scripts": {
+    "test": "node ./index.js"
+  },
+  "author": "HRISHI",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.21.3"
+  }
+}
