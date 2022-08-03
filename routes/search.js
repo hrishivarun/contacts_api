@@ -1,4 +1,5 @@
 const express = require('express');
+const {Sequelize: { Op }} = require('sequelize');
 
 const { loggedIn } = require('./login');
 const User = require('../database/models/user');
@@ -13,10 +14,14 @@ searchUser.get('/search', (req, res) => {
         .then(() => {
             return User.findAll({
                 attributes: {exclude: ['password']},
-                where: {number: number}
+                where: {
+                    number: {
+                        [Op.like]: `%${number}%`
+                    }
+                }
             });
         }).then((data) => {
-            console.log(data[0].dataValues);
+            // console.log(data[0].dataValues);
             res.status(200).json(data);
         });
     }else{
