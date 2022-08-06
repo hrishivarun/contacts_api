@@ -1,7 +1,7 @@
 const User = require('../database/models/user');
 const express = require('express');
 const loginUser = express.Router();
-let loggedIn = true;
+global.loggedIn = false;
 
 loginUser.use(express.json());
 loginUser.post('/login', (req, res) => {
@@ -29,7 +29,4 @@ loginUser.post('/login', (req, res) => {
     })
 });
 
-module.exports = {
-    loginUser,
-    loggedIn
-};
+module.exports = loginUser;

@@ -1,7 +1,5 @@
 const express = require('express');
 const {Sequelize: { Op }} = require('sequelize');
-
-const { loggedIn } = require('./login');
 const User = require('../database/models/user');
 
 const searchUser = express.Router();

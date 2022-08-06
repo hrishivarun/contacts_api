@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 const registerUser = require('./routes/registration');
-const {loginUser, loggedIn} = require('./routes/login');
+const loginUser = require('./routes/login');
 const searchUser = require('./routes/search');
 
 app.use(registerUser);
